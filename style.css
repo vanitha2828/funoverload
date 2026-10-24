@@ -1,0 +1,669 @@
+
+/* 1. Basic page settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Website background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #ffe0ec,
+        #ffc2d9,
+        #f8bbd0
+    );
+
+    color: #6d214f;
+}
+
+/* 3. Main heading */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #c2185b;
+    text-shadow: 2px 2px 8px #ffffff;
+}
+
+/* 4. Message paragraphs */
+p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+/* 5. Cute hover effect */
+h1:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+/* 6. Mobile screen adjustment */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Emotional card */
+.love-card {
+    max-width: 550px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 2px solid white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(194, 24, 91, 0.15);
+}
+
+/* Heart decoration */
+.heart {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Button design */
+button {
+    background: #e75480;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c2185b;
+    transform: scale(1.05);
+}
+
+/* Hidden message */
+.hidden {
+    display: none;
+}
+
+/* Revealed message */
+#secretMessage {
+    margin-top: 25px;
+    padding: 20px;
+    background: #fff0f6;
+    border-radius: 18px;
+    animation: fadeIn 0.8s ease;
+}
+
+#secretMessage h3 {
+    margin-bottom: 12px;
+    color: #c2185b;
+}
+
+/* Smooth reveal animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating hearts container */
+#hearts-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Individual floating heart */
+.floating-heart {
+    position: absolute;
+    bottom: -40px;
+    animation: floatUp 7s linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.music-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 22px;
+    background: #e75480;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.music-link:hover {
+    background: #c2185b;
+    transform: scale(1.05);
+}
+
+/* Birthday countdown card */
+.countdown-card {
+    width: 100%;
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 30px 20px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.75);
+    border: 2px solid white;
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(194, 24, 91, 0.15);
+}
+
+/* Birthday emoji */
+.birthday-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+/* Countdown heading */
+.countdown-card h2 {
+    color: #c2185b;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Birthday description */
+.birthday-message {
+    color: #8e4565;
+    font-size: 1rem;
+}
+
+/* Arrange four boxes in a row */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+/* Individual time box */
+.time-box {
+    min-width: 100px;
+    padding: 18px 12px;
+    background: linear-gradient(135deg, #ffb6d0, #ffe0ec);
+    border: 1px solid white;
+    border-radius: 18px;
+}
+
+/* Countdown numbers */
+.time-box span {
+    display: block;
+    color: #ad1457;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Labels inside boxes */
+.time-box p {
+    margin: 5px 0 0;
+    color: #7b234b;
+    font-size: 0.9rem;
+}
+
+/* Special birthday message */
+#birthday-wish {
+    margin-top: 15px;
+    color: #c2185b;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+/* Hover animation */
+.time-box {
+    transition: transform 0.3s ease;
+}
+
+.time-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Mobile responsive design */
+@media (max-width: 480px) {
+    .countdown-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .time-box {
+        min-width: 75px;
+        padding: 14px 8px;
+    }
+
+    .time-box span {
+        font-size: 1.5rem;
+    }
+}
+
+/* Emotional letter card */
+.letter-card {
+    width: 100%;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px 25px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid white;
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(194, 24, 91, 0.12);
+}
+
+.letter-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.letter-card h2 {
+    color: #c2185b;
+    margin-bottom: 12px;
+}
+
+.letter-intro {
+    color: #8e4565;
+    line-height: 1.7;
+}
+
+/* Letter paper */
+.letter-content {
+    margin-top: 25px;
+    padding: 25px 20px;
+
+    background: #fff5f8;
+    border: 1px solid #f8bbd0;
+    border-radius: 18px;
+
+    text-align: left;
+    animation: fadeIn 0.8s ease;
+}
+
+.letter-content h3 {
+    color: #c2185b;
+    margin-bottom: 12px;
+}
+
+.letter-content p {
+    color: #6d214f;
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* Hide the letter before clicking */
+.hidden {
+    display: none;
+}
+
+/* Mobile adjustment */
+@media (max-width: 480px) {
+    .letter-card {
+        padding: 22px 15px;
+    }
+
+    .letter-content {
+        padding: 18px 14px;
+    }
+}
+
+.final-message {
+    width: 100%;
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 35px 25px;
+    background: linear-gradient(135deg, #fff0f6, #ffc2d9);
+    border: 2px solid white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(194, 24, 91, 0.2);
+}
+
+.final-heart {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.final-message h2 {
+    color: #c2185b;
+    margin-bottom: 20px;
+}
+
+.final-message p {
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.final-message h3 {
+    color: #c2185b;
+    margin-top: 20px;
+}
+
+.final-hearts {
+    color: #e75480;
+    font-size: 2rem;
+    margin-top: 15px;
+    letter-spacing: 10px;
+}
+
+.gift-section {
+    width: 100%;
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.75);
+    border: 2px solid white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(194, 24, 91, 0.15);
+}
+
+.gift-section h2 {
+    color: #c2185b;
+    margin-bottom: 15px;
+}
+
+.gift-box {
+    font-size: 5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.gift-box:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+#giftMessage {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff0f6;
+    border-radius: 18px;
+    animation: fadeIn 0.8s ease;
+}
+
+#giftMessage h3 {
+    color: #c2185b;
+    margin-bottom: 12px;
+}
+
+#giftMessage p {
+    line-height: 1.8;
+}
+
+.burst-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    font-size: 25px;
+    animation: heartBurst 1.5s ease-out forwards;
+}
+
+@keyframes heartBurst {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--moveX), var(--moveY))
+                   scale(1.5) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+.bond-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 35px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #fff0f6, #ffe0ec);
+    border: 2px solid white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(194, 24, 91, 0.15);
+}
+
+.bond-heading {
+    color: #e75480;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.bond-section h2 {
+    color: #c2185b;
+    margin-bottom: 15px;
+}
+
+.bond-intro {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.memory-card {
+    padding: 22px 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid white;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(194, 24, 91, 0.15);
+}
+
+.memory-card span {
+    font-size: 2.3rem;
+}
+
+.memory-card h3 {
+    color: #c2185b;
+    margin: 12px 0;
+    font-size: 1.1rem;
+}
+
+.memory-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.bond-ending {
+    color: #c2185b;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.welcome-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffe0ec, #f8bbd0, #ffc2d9);
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.welcome-content {
+    width: 100%;
+    max-width: 550px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid white;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(194, 24, 91, 0.2);
+}
+
+.welcome-heart {
+    font-size: 4rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+.welcome-small {
+    margin: 15px 0;
+    color: #e75480;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+}
+
+.welcome-content h1 {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.welcome-content p {
+    line-height: 1.8;
+}
+
+.welcome-hearts {
+    margin-top: 20px;
+    font-size: 1.8rem;
+}
+
+.welcome-screen.closed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@media (max-width: 480px) {
+    .welcome-content h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Make sections look consistent */
+.love-card,
+.countdown-card,
+.final-message,
+.gift-section,
+.bond-section {
+    animation: sectionAppear 0.8s ease both;
+}
+
+/* Soft entrance animation */
+@keyframes sectionAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Better spacing on the whole website */
+body {
+    overflow-x: hidden;
+}
+
+/* Make buttons easier to use on mobile */
+button,
+.music-link {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile layout improvements */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .love-card,
+    .countdown-card,
+    .final-message,
+    .gift-section,
+    .bond-section {
+        padding: 22px 16px;
+        margin: 22px auto;
+    }
+
+    .welcome-content {
+        padding: 28px 18px;
+    }
+}
+
+/* Respect visitors who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
